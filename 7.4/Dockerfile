@@ -1,13 +1,13 @@
 FROM debian:testing
 
-MAINTAINER Carl X. Su <bcbcarl@gmail.com>
+MAINTAINER Cristian Dinu @cdinu
 
 ENV LANG en_US.UTF-8
 ENV LC_CTYPE zh_TW.UTF-8
 
 RUN \
   apt-get update -qq && \
-  apt-get install -qqy locales vim-nox && \
+  apt-get install -qqy locales vim-nox git && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
   sed -e 's|^# en_US.UTF-8|en_US.UTF-8|g' -i /etc/locale.gen && \
